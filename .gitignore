@@ -3,5 +3,7 @@
 .project
 *.iml
 target/
+logs/
 .DS_Store
 .gitattributes
+
