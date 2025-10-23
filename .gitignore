@@ -2,6 +2,7 @@
 .classpath
 .project
 *.iml
+*.jar
 target/
 logs/
 .DS_Store
