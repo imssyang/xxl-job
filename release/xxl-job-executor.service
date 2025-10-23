@@ -1,0 +1,17 @@
+[Unit]
+Description=A distributed task scheduling framework
+Documentation=https://github.com/xuxueli/xxl-job
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/opt/app/xxl-job/release
+ExecStart=/opt/java/jenv/shims/java -Xms512m -Xmx1024m \
+    -DLOG_HOME=/opt/app/xxl-job/release/logs \
+    -Dspring.config.location=classpath:/application.properties,file:/opt/app/xxl-job/release/xxl-job-executor.properties \
+    -jar /opt/app/xxl-job/release/xxl-job-executor-3.2.1.jar
+
+[Install]
+WantedBy=multi-user.target
